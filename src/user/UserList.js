@@ -32,8 +32,8 @@ const UserList = ({users}) => {
     
     return ( 
         <>
-            {userMapping}
             <h2>userList</h2>
+            {userMapping}
         </>
      );
 }
