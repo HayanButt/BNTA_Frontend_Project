@@ -1,4 +1,5 @@
 import {useEffect, useState} from "react"
+import UserForm from "./UserForm";
 import UserList from './UserList'
 
 const SERVER_URL = "http://localhost:8080";
@@ -29,13 +30,46 @@ const UserContainer = () => {
         const newUsers = users.filter((user) => user.id !== id);
         setUsers(newUsers);
     };
+
+    const postUser = (newUser) => {
+        fetch(`${SERVER_URL}/users`, {
+            method: "POST",
+            headers: {"Content-Type" : "application/json"},
+            body: JSON.stringify(newUser),
+        })
+            .then((response) => response.json())
+            .then((response) => {
+                setUsers([...users, response]);
+            });
+    };
+    
+    // const updateUser = (updatedUser) => {
+    //     fetch(`${SERVER_URL}/users/${updatedUser.id}`, {
+    //         method: "PUT",
+    //         headers: {"Content-Type" : "application/json"},
+    //         body: JSON.stringify(updatedUser),
+    //     })
+    //         .then((response) => response.json())
+    //         .then((jsonData) => {
+    //             const usersToKeep = users.filter((user) => user.id !== updatedUser.id)
+    //             setUsers([...usersToKeep, jsonData]);
+    //         });
+    //         setUserToUpdate(null);
+    // };
+    
+    const saveUser = (user) => {
+        // user.id ? updateUser(user) : postUser(user);
+        postUser(user);
+    }
     
     return (  
         <>
+            <h1>Create new user</h1>
+            <UserForm saveUser={saveUser}/>
             <UserList   
                 users={users}
                 deleteUser={deleteUser}/>
-            <h1>Hi</h1>
+            
         </>
     );
 }
