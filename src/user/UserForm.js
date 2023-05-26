@@ -1,9 +1,15 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-const UserForm = ({saveUser}) => {
+const UserForm = ({saveUser, userToUpdate}) => {
     const [newUser, setNewUser] = useState({
         name: ""
     })
+
+    useEffect(()=> {
+        if (userToUpdate !== null && userToUpdate.id){
+            setNewUser(userToUpdate);
+        }
+    }, [userToUpdate])
 
     const handleChange = (event) => {
         const propertyName = event.target.name;
