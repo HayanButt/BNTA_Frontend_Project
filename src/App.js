@@ -1,24 +1,19 @@
-import logo from './logo.svg';
+import UserContainer from './user/UserContainer'
+import TaskContainer from './task/TaskContainer'
+import AnimalContainer from './animal/AnimalContainer'
+import FooterContainer from './footer/FooterContainer';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <UserContainer />
+      <TaskContainer />
+      <AnimalContainer />
+      <FooterContainer />
+    </>
+
+
   );
 }
 
