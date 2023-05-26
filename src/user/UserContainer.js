@@ -1,9 +1,30 @@
 import UserList from './UserList'
 
-const UserContainer = () => {
+const UserContainer = ({users}) => {
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     return (  
         <>
-            <UserList />
+            <UserList users={users}/>
             <h1>Hi</h1>
         </>
     );
