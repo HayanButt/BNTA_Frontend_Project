@@ -21,7 +21,7 @@ const UserContainer = () => {
   console.log(users)
 
     const deleteUser = (id) => {
-        fetch(`${SERVER_URL}/estates/${id}`, {
+        fetch(`${SERVER_URL}/users/${id}`, {
             method: "DELETE",
             headers: {"Content-Type": "application/json"},
         })
@@ -30,31 +30,11 @@ const UserContainer = () => {
         setUsers(newUsers);
     };
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     return (  
         <>
-            <UserList users={users}/>
+            <UserList   
+                users={users}
+                deleteUser={deleteUser}/>
             <h1>Hi</h1>
         </>
     );
