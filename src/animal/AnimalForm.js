@@ -16,6 +16,13 @@ const AnimalForm = ({saveAnimal, currentUser}) => {
         setNewAnimal(copiedAnimal)
     }
 
+    const handleChangeType = (event) => {
+        const propertyName = event.target.name;
+        const copiedAnimal = {...newAnimal};
+        copiedAnimal[propertyName] = event.target.id;
+        setNewAnimal(copiedAnimal);
+      }
+
     const handleFormSubmit = (event) => {
         event.preventDefault();
         saveAnimal(newAnimal);
@@ -48,7 +55,7 @@ const AnimalForm = ({saveAnimal, currentUser}) => {
                     onChange={date => setStartDate(date)}
                 /> */}
 
-                <select name="animalType">
+                <select onChange={handleChangeType} name="animalType">
                     <option id="1" value="cat">Cat</option>
                     <option id="2" value="dog">Dog</option>
                     <option id="3" value="fish">Fish</option>

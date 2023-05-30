@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 
 const Task = ({task}) => {
-    const [visited, setVisited] = useState(false);
+    const [completed, setCompleted] = useState(false);
 
-    const handleVisited = () => {
-        setVisited(!visited);
+    const handleCompleted = () => {
+        setCompleted(!completed);
       };
 
     
@@ -14,8 +14,8 @@ const Task = ({task}) => {
             <p>{task.dueDate}</p>
             <p>{task.priority}</p>
         <label>
-        Visited:
-        <input type="checkbox" checked={visited} onChange={handleVisited} />
+        Completed:
+        <input type="checkbox" checked={completed} onChange={handleCompleted} />
       </label>
         </>
      );
