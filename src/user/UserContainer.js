@@ -1,7 +1,7 @@
 import {useEffect, useState} from "react"
 import UserForm from "./UserForm";
 import UserList from './UserList';
-// import AnimalContainer from '../animal/AnimalContainer';
+import AnimalContainer from '../animal/AnimalContainer';
 
 const SERVER_URL = "http://localhost:8080";
 
@@ -99,10 +99,10 @@ const UserContainer = () => {
             <UserList    
                 users={users}
                 deleteUser={deleteUser} 
-            selectUserForEditing = {selectUserForEditing}
+                selectUserForEditing = {selectUserForEditing}
             />
             
-            {/* <AnimalContainer users={users}/> */}
+            <AnimalContainer currentUser={currentUser}/>
         </>
     );
 }
