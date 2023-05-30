@@ -1,7 +1,7 @@
 import Task from './Task'
 
-const TaskList = () => {
-    return ( 
+const TaskList = ({currentUserTaskList}) => {
+    return (
         <>
             <Task />
             <h2>tasklist</h2>
