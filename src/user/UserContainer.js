@@ -1,12 +1,14 @@
 import {useEffect, useState} from "react"
 import UserForm from "./UserForm";
-import UserList from './UserList'
+import UserList from './UserList';
+// import AnimalContainer from '../animal/AnimalContainer';
 
 const SERVER_URL = "http://localhost:8080";
 
 const UserContainer = () => {
     
     const [users, setUsers] = useState([]);
+    const [currentUser, setCurrentUser] = useState([])
 
     const [userToUpdate, setUserToUpdate] = useState(null);
 
@@ -65,16 +67,34 @@ const UserContainer = () => {
     const selectUserForEditing = (user) => {
         setUserToUpdate(user) 
     }
+
+    const currentUserOptions = users.map((user) => {
+        return (
+          <option key={user.id} value={user.id}>
+            {user.name}
+          </option>
+        );
+      });
     
     return (  
         <>
+            <nav>
+                <select name="currentUser">
+                <option disabled-value="select-current-user">Select a user</option>
+                    {currentUserOptions}
+                </select>
+            </nav>
+
             <h1>Create new user</h1>
             <UserForm saveUser={saveUser}       
             userToUpdate ={userToUpdate}/>
             <UserList    
                 users={users}
                 deleteUser={deleteUser} 
-            selectUserForEditing = {selectUserForEditing}/>
+            selectUserForEditing = {selectUserForEditing}
+            />
+            
+            {/* <AnimalContainer users={users}/> */}
         </>
     );
 }

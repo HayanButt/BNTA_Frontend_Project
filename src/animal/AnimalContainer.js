@@ -1,6 +1,9 @@
 import AnimalList from "./AnimalList";
 
-const AnimalContianer = () => {
+const AnimalContianer = ({users}) => {
+
+
+
     return ( 
         <>
             <AnimalList />
