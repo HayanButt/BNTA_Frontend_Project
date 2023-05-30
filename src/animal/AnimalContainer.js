@@ -3,6 +3,7 @@ import AnimalList from "./AnimalList";
 import TaskList from "../task/TaskList";
 import AnimalForm from "./AnimalForm";
 
+const SERVER_URL = "http://localhost:8080"
 
 const AnimalContainer = ({currentUser}) => {
     const [userAnimals, setUserAnimals] = useState([])
@@ -19,6 +20,22 @@ const AnimalContainer = ({currentUser}) => {
         }
     }, [currentUser])
 
+    const saveAnimal =(animal) => {
+        postAnimal(animal);
+      }
+
+    const postAnimal = (newAnimal) => {
+        fetch (`${SERVER_URL}/animals`,{
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify(newAnimal)
+        })
+        .then ((response) => response.json())
+        .then ((response) => {
+            setUserAnimals([...userAnimals, response])
+        })
+    }
+
 
 
 
@@ -27,7 +44,7 @@ const AnimalContainer = ({currentUser}) => {
         <>
             <AnimalList userAnimals={userAnimals}/>
             <TaskList currentUserTaskList={currentUserTaskList}/>
-            <AnimalForm />
+            <AnimalForm saveAnimal={saveAnimal} currentUser={currentUser}/>
             
         </>
      );

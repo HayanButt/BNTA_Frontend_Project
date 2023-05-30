@@ -1,30 +1,35 @@
 import { useState } from "react";
 // import DatePicker from 'react-date-picker';
-const AnimalForm = () => {
+const AnimalForm = ({saveAnimal, currentUser}) => {
     
     const [newAnimal, setNewAnimal] = useState({
+        userId: currentUser.id,
         name: "",
         birthday:"",
         animalType: null
     });
 
-    // const [startDate, setStartDate] = useState(new Date());
+    const handleChange =(event) => {
+        const propertyName = event.target.name
+        const copiedAnimal = {...newAnimal}
+        copiedAnimal[propertyName] = event.target.value
+        setNewAnimal(copiedAnimal)
+    }
 
-    // const handleAnimalTypeChange = (event) => {
-    //     const animalTypeId = parseInt(event.target.value)
-    //     const selectedAnimalType = animalTypes.find(animalType => {
-    //         return animalType.id === animalTypeId 
-    //     })
-    //     const copiedAnimal = {...newAnimal}
-    //     copiedAnimal.animalType = selectedAnimalType
-    //     setNewAnimal(copiedAnimal)
-    // }
-
-    const handleChange =() => {}
+    const handleFormSubmit = (event) => {
+        event.preventDefault();
+        saveAnimal(newAnimal);
+        setNewAnimal({
+          userId: currentUser.id, 
+          name: "",
+          birthday: "date",
+          animalType: null
+        })
+      }
     
     return ( 
         <>
-            <form>
+            <form onSubmit={handleFormSubmit}>
                 <input
                 type="text"
                 name="name"
@@ -43,12 +48,12 @@ const AnimalForm = () => {
                     onChange={date => setStartDate(date)}
                 /> */}
 
-                <select>
-                    <option value="cat">Cat</option>
-                    <option value="dog">Dog</option>
-                    <option value="fish">Fish</option>
+                <select name="animalType">
+                    <option id="1" value="cat">Cat</option>
+                    <option id="2" value="dog">Dog</option>
+                    <option id="3" value="fish">Fish</option>
                 </select>
-                <button>Create Animal</button>
+                <button type="submit">Create Animal</button>
             </form>
         </>
      );
