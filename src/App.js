@@ -18,7 +18,6 @@ function App() {
   return (
     <>
       <UserContainer />
-      <TaskContainer />
       <FooterContainer />
     </>
 
