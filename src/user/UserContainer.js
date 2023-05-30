@@ -23,7 +23,6 @@ const UserContainer = () => {
         fetchAPI()
     } ,[])
   
-  console.log(users)
 
     const deleteUser = (id) => {
         fetch(`${SERVER_URL}/users/${id}`, {
@@ -75,12 +74,21 @@ const UserContainer = () => {
           </option>
         );
       });
+
+      const handleCurrentUserChange = (event) => {
+        const currentUserId = parseInt(event.target.value);
+        const selectedUser = users.find(user => {
+            return user.id === currentUserId;
+        });
+        setCurrentUser(selectedUser)
+        console.log(currentUser)
+      }
     
     return (  
         <>
             <nav>
-                <select name="currentUser">
-                <option disabled-value="select-current-user">Select a user</option>
+                <select name="currentUser" onChange={handleCurrentUserChange} >
+                    <option disabled-value="select-current-user">Select a user</option>
                     {currentUserOptions}
                 </select>
             </nav>
