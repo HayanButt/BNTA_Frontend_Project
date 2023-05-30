@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import AnimalList from "./AnimalList";
 import TaskList from "../task/TaskList";
+import AnimalForm from "./AnimalForm";
 
 
 const AnimalContainer = ({currentUser}) => {
@@ -18,10 +19,15 @@ const AnimalContainer = ({currentUser}) => {
         }
     }, [currentUser])
 
+
+
+
+
     return ( 
         <>
             <AnimalList userAnimals={userAnimals}/>
             <TaskList currentUserTaskList={currentUserTaskList}/>
+            <AnimalForm />
             
         </>
      );
