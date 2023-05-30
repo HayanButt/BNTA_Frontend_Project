@@ -81,7 +81,6 @@ const UserContainer = () => {
             return user.id === currentUserId;
         });
         setCurrentUser(selectedUser)
-        console.log(currentUser)
       }
     
     return (  

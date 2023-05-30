@@ -14,17 +14,19 @@ const AnimalContainer = ({currentUser}) => {
     useEffect(()=> {
         fetchAnimals()
         findCurrentUsersAnimals()
-    }, [])
+    }, [currentUser])
     
     const findCurrentUsersAnimals =() => {
-        const filteredAnimals = animals.filter((animal) => animal.user.id === currentUser.id)
-        setUsersAnimals(filteredAnimals)
+        if(currentUser.id !== null){
+            const filteredAnimals = animals.filter((animal) => animal.user.id === currentUser.id)
+            setUsersAnimals(filteredAnimals)
+            console.log(filteredAnimals);
+        }
     }
 
     return ( 
         <>
-            <AnimalList usersAnimals={usersAnimals}/>
-            <h1>animal</h1>
+            <AnimalList animals={animals} usersAnimals={usersAnimals}/>
         </>
      );
 }
