@@ -1,9 +1,9 @@
 import Animal from './Animal'
 
-const AnimalList = ({userAnimals,animals}) => {
+const AnimalList = ({userAnimals}) => {
     const mappedAnimals = userAnimals.map((userAnimal) => {
-        return (<Animal key={userAnimal.id} userAnimal={userAnimal}/>);
-    });
+        return (<Animal key={userAnimal.id} userAnimal = {userAnimal}/>);
+    })
 
     return ( 
         <>
@@ -14,13 +14,3 @@ const AnimalList = ({userAnimals,animals}) => {
 }
  
 export default AnimalList;
-
-/* const PetsList = ({pets}) => {
-    const petObjectsArray = pets.map(pet => pet);
-
-    return <section>
-        {petObjectsArray.map(pet => <Pet key={pet.id} pet={pet} />)}
-    </section>
-} 
-
-*/
