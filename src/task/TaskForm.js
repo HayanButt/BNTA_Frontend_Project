@@ -17,21 +17,21 @@ const TaskForm = ({saveTask, userAnimals}) => {
    const [tasksToDisplay, setTasksToDisplay] = useState([])
    
     const taskOptions = [
-        {value: "LITTERBOX", label: "LITTERBOX", link: "Cat"},
-        {value: "FEEDING", label: "FEEDING", link: "Cat"},
-        {value: "GROOMING", label: "GROOMING", link: "Cat"},
-        {value: "MEDICATION", label: "MEDICATION", link: "Cat"},
-        {value: "WATER", label: "WATER", link: "Cat"},
-        {value: "PLAYTIME", label: "PLAYTIME", link: "Cat"},
-        {value: "VETERINARYCARE", label: "VETERINARYCARE", link: "Cat"},
-        {value: "MEDICATION", label: "MEDICATION", link: "Dog"},
-        {value: "FEEDING", label: "FEEDING", link: "Dog"},
-        {value: "GROOMING", label: "GROOMING", link: "Dog"},
-        {value: "WATER", label: "WATER", link: "Dog"},
-        {value: "PLAYTIME", label: "PLAYTIME", link: "Dog"},
-        {value: "VETERINARYCARE", label: "VETERINARYCARE", link: "Dog"},
-        {value: "MAINTENANCE", label: "MAINTENANCE", link: "Fish"},
-        {value: "FEEDING", label: "FEEDING", link: "Fish"}
+        {value: "LITTERBOX", label: "LITTERBOX", link: "Cat", id:"6"},
+        {value: "FEEDING", label: "FEEDING", link: "Cat", id:"1"},
+        {value: "GROOMING", label: "GROOMING", link: "Cat", id:"2"},
+        {value: "MEDICATION", label: "MEDICATION", link: "Cat", id:"3"},
+        {value: "WATER", label: "WATER", link: "Cat", id:"4"},
+        {value: "PLAYTIME", label: "PLAYTIME", link: "Cat", id:"5"},
+        {value: "VETERINARYCARE", label: "VETERINARYCARE", link: "Cat", id:"8"},
+        {value: "MEDICATION", label: "MEDICATION", link: "Dog", id:"3"},
+        {value: "FEEDING", label: "FEEDING", link: "Dog", id:"1"},
+        {value: "GROOMING", label: "GROOMING", link: "Dog", id:"2"},
+        {value: "WATER", label: "WATER", link: "Dog", id:"4"},
+        {value: "PLAYTIME", label: "PLAYTIME", link: "Dog", id:"5"},
+        {value: "VETERINARYCARE", label: "VETERINARYCARE", link: "Dog", id:"8"},
+        {value: "MAINTENANCE", label: "MAINTENANCE", link: "Fish", id:"7"},
+        {value: "FEEDING", label: "FEEDING", link: "Fish", id:"1"}
     ]
 
     const animalOptions = userAnimals.map((animal) => {
@@ -70,7 +70,7 @@ const TaskForm = ({saveTask, userAnimals}) => {
     }
 
     const handleTaskTypeChange = (event) => {
-        const taskTypeId = currentAnimal.animalType.availableTasks.indexOf(taskType)
+        const taskTypeId = event.target.value
         const copiedTask = {...newTask}
         copiedTask["taskTypeId"] = taskTypeId
         setNewTask(copiedTask)
