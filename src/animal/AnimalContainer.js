@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import AnimalList from "./AnimalList";
 import TaskList from "../task/TaskList";
 import AnimalForm from "./AnimalForm";
+import TaskForm from "../task/TaskForm"
 
 const SERVER_URL = "http://localhost:8080"
 
@@ -46,6 +47,25 @@ const AnimalContainer = ({currentUser}) => {
         setUserAnimals(newAnimal);
     };
 
+    // TASKS
+
+    const postTask = (newTask) => {
+        fetch (`${SERVER_URL}/tasks`,{
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify(newTask)
+        })
+        .then ((response) => response.json())
+        .then ((response) => {
+            setCurrentUserTaskList([...currentUserTaskList, response])
+        })
+    }
+
+    const saveTask =(task) => {
+        console.log(task);
+        postTask(task);
+      }
+
 
 
 
@@ -55,6 +75,7 @@ const AnimalContainer = ({currentUser}) => {
             <AnimalList userAnimals={userAnimals} deleteAnimal={deleteAnimal}/>
             <TaskList currentUserTaskList={currentUserTaskList}/>
             <AnimalForm saveAnimal={saveAnimal} currentUser={currentUser}/>
+            <TaskForm saveTask={saveTask} userAnimals={userAnimals}/>
             
         </>
      );

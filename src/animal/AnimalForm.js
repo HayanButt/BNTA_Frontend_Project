@@ -21,12 +21,6 @@ const AnimalForm = ({saveAnimal, currentUser}) => {
         setNewAnimal(copiedAnimal)
     }
 
-    const handleChangeType = (event) => {
-        const propertyName = event.target.name;
-        const copiedAnimal = {...newAnimal};
-        copiedAnimal[propertyName] = event.target.id;
-        setNewAnimal(copiedAnimal);
-      }
 
     const handleFormSubmit = (event) => {
         event.preventDefault();
