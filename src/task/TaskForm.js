@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 import Select from 'react-select'
 
 const TaskForm = ({saveTask, userAnimals}) => {
@@ -7,7 +7,7 @@ const TaskForm = ({saveTask, userAnimals}) => {
         dueDate: "",
         priority: "",
         completed: false,
-        taskTypeId: ""
+        taskTypeId: null
     })
    const [currentAnimal, setCurrentAnimal] = useState(null)
 
@@ -37,15 +37,10 @@ const TaskForm = ({saveTask, userAnimals}) => {
         ) 
     })
 
-    
-
-    // const animalTypeOptions = userAnimals.animalType[1].availableTask.map((task) => {
-    //     return (
-    //         <option key={task.id} value={task.id}>
-    //             {task}
-    //         </option>
-    //     )
-    // })
+    // useEffect(() => {
+    //     const updatedTask = {...newTask, animalId: currentAnimal.id}
+    //     setNewTask(updatedTask);
+    // }, [currentAnimal])
     
     
     const handleAnimalChange = (event) => {
@@ -71,10 +66,12 @@ const TaskForm = ({saveTask, userAnimals}) => {
         event.preventDefault();
         saveTask(newTask);
         setNewTask({
+            animalId: currentAnimal.id,
             content: "",
             dueDate: "",
             priority: "",
-            completed: false
+            completed: false,
+            taskTypeId: null
         })
     }
 
@@ -105,7 +102,7 @@ const TaskForm = ({saveTask, userAnimals}) => {
                 {animalOptions}
             </select>
 
-            <Select options={taskOptions.filter((task) => task.link === currentAnimal?.animalType.animalTypeName)}></Select>
+            <Select onChange={handleChange} name="taskTypeId" options={taskOptions.filter((task) => task.link === currentAnimal?.animalType.animalTypeName)}></Select>
             {/* <Select options={currentAnimal?.animalType.availableTasks}></Select> */}
             <button type="submit">Submit</button>
         </form>
