@@ -21,6 +21,7 @@ const AnimalContainer = ({currentUser}) => {
     }, [currentUser])
 
     const saveAnimal =(animal) => {
+        console.log(animal);
         postAnimal(animal);
       }
 

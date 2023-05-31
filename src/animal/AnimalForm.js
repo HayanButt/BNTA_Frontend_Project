@@ -1,13 +1,18 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 // import DatePicker from 'react-date-picker';
 const AnimalForm = ({saveAnimal, currentUser}) => {
     
     const [newAnimal, setNewAnimal] = useState({
-        userId: currentUser.id,
         name: "",
         birthday:"",
-        animalType: null
+        animalTypeId: null
     });
+
+    useEffect(() => {
+        const updatedAnimal = {...newAnimal, userId: currentUser.id}
+        setNewAnimal(updatedAnimal);
+    }, [currentUser])
+
 
     const handleChange =(event) => {
         const propertyName = event.target.name
@@ -30,13 +35,18 @@ const AnimalForm = ({saveAnimal, currentUser}) => {
           userId: currentUser.id, 
           name: "",
           birthday: "date",
-          animalType: null
+          animalTypeId: null
         })
       }
     
     return ( 
         <>
             <form onSubmit={handleFormSubmit}>
+                <input 
+                name="userId"
+                value={newAnimal.userId}
+                // onChange={handleChange}
+                />
                 <input
                 type="text"
                 name="name"
@@ -55,10 +65,10 @@ const AnimalForm = ({saveAnimal, currentUser}) => {
                     onChange={date => setStartDate(date)}
                 /> */}
 
-                <select onChange={handleChangeType} name="animalType">
-                    <option id="1" value="cat">Cat</option>
-                    <option id="2" value="dog">Dog</option>
-                    <option id="3" value="fish">Fish</option>
+                <select onChange={handleChange} name="animalTypeId">
+                    <option value={1}>Cat</option> 
+                    <option value={2}>Dog</option>
+                    <option value={3}>Fish</option>
                 </select>
                 <button type="submit">Create Animal</button>
             </form>
