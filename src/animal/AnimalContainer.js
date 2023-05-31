@@ -62,7 +62,7 @@ const AnimalContainer = ({currentUser}) => {
     }
 
     const saveTask =(task) => {
-        console.log(task);
+        console.log(JSON.stringify(task));
         postTask(task);
       }
 

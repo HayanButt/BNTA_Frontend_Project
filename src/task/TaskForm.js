@@ -9,7 +9,9 @@ const TaskForm = ({saveTask, userAnimals}) => {
         completed: false,
         taskTypeId: null
     })
+
    const [currentAnimal, setCurrentAnimal] = useState(null)
+   const [taskType, setTaskType] = useState("select task type")
 
     const taskOptions = [
         {value: "LITTERBOX", label: "LITTERBOX", link: "Cat"},
@@ -37,10 +39,10 @@ const TaskForm = ({saveTask, userAnimals}) => {
         ) 
     })
 
-    // useEffect(() => {
-    //     const updatedTask = {...newTask, animalId: currentAnimal.id}
-    //     setNewTask(updatedTask);
-    // }, [currentAnimal])
+    useEffect(() => {
+        const updatedTask = {...newTask, animalId: currentAnimal?.id}
+        setNewTask(updatedTask);
+    }, [currentAnimal])
     
     
     const handleAnimalChange = (event) => {
@@ -50,7 +52,7 @@ const TaskForm = ({saveTask, userAnimals}) => {
 
         })
         const copiedTask = {... newTask}
-        copiedTask.animal = selectedAnimal
+        copiedTask.animalId = animalId
         setNewTask(copiedTask)
         setCurrentAnimal(selectedAnimal)
     }
@@ -59,6 +61,13 @@ const TaskForm = ({saveTask, userAnimals}) => {
         const propertyName = event.target.name
         const copiedTask = {...newTask}
         copiedTask[propertyName] = event.target.value
+        setNewTask(copiedTask)
+    }
+
+    const handleTaskTypeChange = (event) => {
+        const taskTypeId = currentAnimal.animalType.availableTasks.indexOf(taskType)
+        const copiedTask = {...newTask}
+        copiedTask["taskTypeId"] = taskTypeId
         setNewTask(copiedTask)
     }
     
@@ -73,6 +82,8 @@ const TaskForm = ({saveTask, userAnimals}) => {
             completed: false,
             taskTypeId: null
         })
+        event.target.reset();
+        setTaskType()
     }
 
     return ( 
@@ -92,9 +103,9 @@ const TaskForm = ({saveTask, userAnimals}) => {
 
             <select onChange={handleChange} name="priority">
                 <option disabled-value="select-priority">Select a priority</option>
-                <option value={1}>LOW</option> 
-                <option value={2}>MEDIUM</option>
-                <option value={3}>HIGH</option>
+                <option value={0}>LOW</option> 
+                <option value={1}>MEDIUM</option>
+                <option value={2}>HIGH</option>
             </select>
 
             <select onChange={handleAnimalChange} name="userAnimals">
@@ -102,7 +113,11 @@ const TaskForm = ({saveTask, userAnimals}) => {
                 {animalOptions}
             </select>
 
-            <Select onChange={handleChange} name="taskTypeId" options={taskOptions.filter((task) => task.link === currentAnimal?.animalType.animalTypeName)}></Select>
+            <Select onChange={handleTaskTypeChange}
+                    value={taskType} 
+                    options={taskOptions.filter((task) => 
+                    task.link === currentAnimal?.animalType.animalTypeName)}>
+            </Select>
             {/* <Select options={currentAnimal?.animalType.availableTasks}></Select> */}
             <button type="submit">Submit</button>
         </form>
