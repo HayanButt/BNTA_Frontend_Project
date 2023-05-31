@@ -37,13 +37,22 @@ const AnimalContainer = ({currentUser}) => {
         })
     }
 
+    const deleteAnimal = (id) => {
+        fetch(`${SERVER_URL}/animals/${id}`, {
+            method: "DELETE",
+            // headers: {"Content-Type": "application/json"},
+        })
+        const newAnimal = userAnimals.filter((animal) => animal.id !== id);
+        setUserAnimals(newAnimal);
+    };
+
 
 
 
 
     return ( 
         <>
-            <AnimalList userAnimals={userAnimals}/>
+            <AnimalList userAnimals={userAnimals} deleteAnimal={deleteAnimal}/>
             <TaskList currentUserTaskList={currentUserTaskList}/>
             <AnimalForm saveAnimal={saveAnimal} currentUser={currentUser}/>
             

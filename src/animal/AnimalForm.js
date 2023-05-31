@@ -42,11 +42,7 @@ const AnimalForm = ({saveAnimal, currentUser}) => {
     return ( 
         <>
             <form onSubmit={handleFormSubmit}>
-                <input 
-                name="userId"
-                value={newAnimal.userId}
-                // onChange={handleChange}
-                />
+                
                 <input
                 type="text"
                 name="name"
@@ -66,6 +62,7 @@ const AnimalForm = ({saveAnimal, currentUser}) => {
                 /> */}
 
                 <select onChange={handleChange} name="animalTypeId">
+                    <option disabled-value="select-animal-type">Select an animal type</option>
                     <option value={1}>Cat</option> 
                     <option value={2}>Dog</option>
                     <option value={3}>Fish</option>
