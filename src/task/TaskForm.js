@@ -6,13 +6,16 @@ const TaskForm = ({saveTask, userAnimals}) => {
         content: "",
         dueDate: "",
         priority: "",
-        completed: false,
+        isCompleted: false,
         taskTypeId: null
     })
 
-   const [currentAnimal, setCurrentAnimal] = useState(null)
-   const [taskType, setTaskType] = useState("select task type")
 
+
+   const [currentAnimal, setCurrentAnimal] = useState(null)
+   const [taskType, setTaskType] = useState(null)
+   const [tasksToDisplay, setTasksToDisplay] = useState([])
+   
     const taskOptions = [
         {value: "LITTERBOX", label: "LITTERBOX", link: "Cat"},
         {value: "FEEDING", label: "FEEDING", link: "Cat"},
@@ -39,6 +42,7 @@ const TaskForm = ({saveTask, userAnimals}) => {
         ) 
     })
 
+
     useEffect(() => {
         const updatedTask = {...newTask, animalId: currentAnimal?.id}
         setNewTask(updatedTask);
@@ -54,6 +58,7 @@ const TaskForm = ({saveTask, userAnimals}) => {
         const copiedTask = {... newTask}
         copiedTask.animalId = animalId
         setNewTask(copiedTask)
+        setTaskType(selectedAnimal.animalType.animalTypeName)
         setCurrentAnimal(selectedAnimal)
     }
 
@@ -79,12 +84,24 @@ const TaskForm = ({saveTask, userAnimals}) => {
             content: "",
             dueDate: "",
             priority: "",
-            completed: false,
+            isCompleted: false,
             taskTypeId: null
         })
         event.target.reset();
-        setTaskType()
     }
+
+    const filterTaskOptions = () => {
+        const filteredOptions = taskOptions.filter((task) => {
+            return task.link === currentAnimal?.animalType.animalTypeName
+        })
+        const mappedFilteredOptions = filteredOptions.map(task => {
+            return <option>{task.value}</option> 
+        })
+        
+        setTasksToDisplay(mappedFilteredOptions)
+    }
+
+    useEffect(filterTaskOptions,[taskType])
 
     return ( 
         <form onSubmit={handleFormSubmit}>
@@ -113,12 +130,10 @@ const TaskForm = ({saveTask, userAnimals}) => {
                 {animalOptions}
             </select>
 
-            <Select onChange={handleTaskTypeChange}
-                    value={taskType} 
-                    options={taskOptions.filter((task) => 
-                    task.link === currentAnimal?.animalType.animalTypeName)}>
-            </Select>
-            {/* <Select options={currentAnimal?.animalType.availableTasks}></Select> */}
+            <select onChange={handleTaskTypeChange}>
+                {tasksToDisplay}
+            </select>       
+                     {/* <Select options={currentAnimal?.animalType.availableTasks}></Select> */}
             <button type="submit">Submit</button>
         </form>
      );
