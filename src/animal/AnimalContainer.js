@@ -83,16 +83,6 @@ const AnimalContainer = ({currentUser}) => {
         setCompletedTaskList([...completedTaskList, task])
     }
 
-    const deleteTask = (id) => {
-        fetch(`${SERVER_URL}/tasks/${id}`, {
-            method: "DELETE",
-            headers: {"Content-Type" : "application/json"}
-        })
-        const newTask = currentUserTaskList.filter((task) => task.id !== id)
-        setCurrentUserTaskList(newTask)
-    }
-
-
     return ( 
         <>
             <AnimalList userAnimals={userAnimals} deleteAnimal={deleteAnimal}/>
