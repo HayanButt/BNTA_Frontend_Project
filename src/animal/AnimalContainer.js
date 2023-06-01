@@ -8,6 +8,7 @@ const SERVER_URL = "http://localhost:8080"
 
 const AnimalContainer = ({currentUser}) => {
     const [userAnimals, setUserAnimals] = useState([])
+    const [completedTaskList, setCompletedTaskList] = useState([])
     const [currentUserTaskList, setCurrentUserTaskList] = useState([])
 
     useEffect(()=> {
@@ -66,6 +67,7 @@ const AnimalContainer = ({currentUser}) => {
         postTask(task);
     }
 
+
     const deleteTask = (id) => {
         fetch(`${SERVER_URL}/tasks/${id}`, {
             method: "DELETE",
@@ -77,12 +79,27 @@ const AnimalContainer = ({currentUser}) => {
 
 
 
+    const completedTasks = (task) => {
+        setCompletedTaskList([...completedTaskList, task])
+    }
+
+    const deleteTask = (id) => {
+        fetch(`${SERVER_URL}/tasks/${id}`, {
+            method: "DELETE",
+            headers: {"Content-Type" : "application/json"}
+        })
+        const newTask = currentUserTaskList.filter((task) => task.id !== id)
+        setCurrentUserTaskList(newTask)
+    }
 
 
     return ( 
         <>
             <AnimalList userAnimals={userAnimals} deleteAnimal={deleteAnimal}/>
-            <TaskList currentUserTaskList={currentUserTaskList} deleteTask={deleteTask}/>
+
+          
+            <TaskList currentUserTaskList={currentUserTaskList} setCurrentUserTaskList={setCurrentUserTaskList} deleteTask={deleteTask} completedTasks={completedTasks} completedTaskList={completedTaskList}/>
+
             <AnimalForm saveAnimal={saveAnimal} currentUser={currentUser}/>
             <TaskForm saveTask={saveTask} userAnimals={userAnimals}/>
             
