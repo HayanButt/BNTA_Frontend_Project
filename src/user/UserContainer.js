@@ -60,6 +60,7 @@ const UserContainer = () => {
             setUsers([...usersToKeep, jsonData]);
         });
         setUserToUpdate(null);
+        setCurrentUser(updatedUser);
     };
     
     const saveUser = (user) => {
@@ -85,6 +86,12 @@ const UserContainer = () => {
         });
         setCurrentUser(selectedUser)
       }
+
+      const handleEditClick = () => {
+        selectUserForEditing(currentUser);
+        const userForm = document.querySelector("form")
+        userForm.scrollIntoView({behavior: "smooth"})
+    }
     
     return (  
         <>
@@ -99,15 +106,21 @@ const UserContainer = () => {
                 </select>
             </nav>
         </header>
- 
+        
         {currentUser.id ?<h2>Welcome {currentUser.name}</h2>: <h2>Select or create user</h2>}
+        <button onClick={() => deleteUser(currentUser.id)}>
+                Delete user
+        </button>
+        <button onClick={handleEditClick}>
+                Edit user
+        </button>
             <UserForm saveUser={saveUser}       
             userToUpdate ={userToUpdate}/>
-            <UserList    
+            {/* <UserList    
                 users={users}
                 deleteUser={deleteUser} 
                 selectUserForEditing = {selectUserForEditing}
-            />
+            /> */}
             
             <AnimalContainer currentUser={currentUser}/>
         </>
