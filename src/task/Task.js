@@ -31,5 +31,6 @@ const Task = ({ task, handleCompleted, completed, deleteTask }) => {
     </>
   );
 }}
+
  
 export default Task;

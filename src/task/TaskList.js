@@ -10,6 +10,7 @@ const TaskList = ({ currentUserTaskList, setCurrentUserTaskList }) => {
     setCompletedTaskList([...completedTaskList, task]);
   }
 
+
   const deleteTask = (taskId) => {
     const newRemainingTaskList = currentUserTaskList.filter((t) => t.id !== taskId);
     setCurrentUserTaskList(newRemainingTaskList);
