@@ -103,10 +103,6 @@ const AnimalContainer = ({currentUser}) => {
             <button onClick={handleFormClickTask}>{showTask === true? "Hide form" : "Show form"}</button>
             {showTask ? <TaskForm saveTask={saveTask} userAnimals={userAnimals}/> : null}
             
-            
-            <TaskList currentUserTaskList={currentUserTaskList} setCurrentUserTaskList={setCurrentUserTaskList} deleteTask={deleteTask} completedTasks={completedTasks} completedTaskList={completedTaskList}/>
-            <AnimalForm saveAnimal={saveAnimal} currentUser={currentUser}/>
-            <TaskForm saveTask={saveTask} userAnimals={userAnimals}/>
 
             
         </>
