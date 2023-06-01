@@ -66,8 +66,6 @@ const AnimalContainer = ({currentUser}) => {
         console.log(JSON.stringify(task));
         postTask(task);
     }
-
-
     const deleteTask = (id) => {
         fetch(`${SERVER_URL}/tasks/${id}`, {
             method: "DELETE",
@@ -83,13 +81,11 @@ const AnimalContainer = ({currentUser}) => {
         setCompletedTaskList([...completedTaskList, task])
     }
 
+
     return ( 
         <>
             <AnimalList userAnimals={userAnimals} deleteAnimal={deleteAnimal}/>
-
-          
             <TaskList currentUserTaskList={currentUserTaskList} setCurrentUserTaskList={setCurrentUserTaskList} deleteTask={deleteTask} completedTasks={completedTasks} completedTaskList={completedTaskList}/>
-
             <AnimalForm saveAnimal={saveAnimal} currentUser={currentUser}/>
             <TaskForm saveTask={saveTask} userAnimals={userAnimals}/>
             

@@ -107,15 +107,18 @@ const UserContainer = () => {
             </nav>
         </header>
         
-        {currentUser.id ?<h2>Welcome {currentUser.name}</h2>: <h2>Select or create user</h2>}
-        <button onClick={() => deleteUser(currentUser.id)}>
-                Delete user
-        </button>
-        <button onClick={handleEditClick}>
-                Edit user
-        </button>
-            <UserForm saveUser={saveUser}       
-            userToUpdate ={userToUpdate}/>
+
+        <div className="row">
+            {currentUser.id ?<h2>Welcome {currentUser.name}</h2>: <h2>Select or create user</h2>}
+            <button onClick={() => deleteUser(currentUser.id)}>
+                    Delete user
+            </button>
+            <button onClick={handleEditClick}>
+                    Edit user
+            </button>
+                <UserForm saveUser={saveUser}       
+                userToUpdate ={userToUpdate}/>
+        </div>
             {/* <UserList    
                 users={users}
                 deleteUser={deleteUser} 
