@@ -1,0 +1,25 @@
+/* CONTAINER */
+
+.navbar__Wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+a {
+    padding-right: 16px;
+    text-decoration: none;
+    color: #000;
+}
+
+header {
+    height: 72px;
+}
+
+/* USER FORM */
+
+.userForm__wrapper {
+    height: 150px;        
+}
+
+
+

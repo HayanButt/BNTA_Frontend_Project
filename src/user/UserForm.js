@@ -27,16 +27,21 @@ const UserForm = ({saveUser, userToUpdate}) => {
     }
 
     return ( 
-        <form onSubmit={handleFormSubmit}>
-            <input 
-                type="text"
-                name="name"
-                placeholder="Enter your name"
-                value={newUser.name}
-                onChange={handleChange}
-            />
-            <button type="submit">{newUser.id ? "Update" : "Create"}</button>
-        </form>
+        <>
+        <section className="userForm__wrapper">
+            <h1>Create new user</h1>
+            <form onSubmit={handleFormSubmit}>
+                <input 
+                    type="text"
+                    name="name"
+                    placeholder="Enter your name"
+                    value={newUser.name}
+                    onChange={handleChange}
+                    />
+                <button type="submit">{newUser.id ? "Update" : "Create"}</button>
+            </form>
+        </section>
+        </>
      );
 }
  

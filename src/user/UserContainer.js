@@ -1,7 +1,9 @@
+
 import {useEffect, useState} from "react"
 import UserForm from "./UserForm";
 import UserList from './UserList';
 import AnimalContainer from '../animal/AnimalContainer';
+import './User.css'
 
 const SERVER_URL = "http://localhost:8080";
 
@@ -86,14 +88,18 @@ const UserContainer = () => {
     
     return (  
         <>
+        <header className="navbar__Wrapper">
+            <h1>Cat Checklist</h1>
             <nav>
+                <a href="">Animals</a>
+                <a href="">Task</a>
                 <select name="currentUser" onChange={handleCurrentUserChange} >
                     <option disabled-value="select-current-user">Select a user</option>
                     {currentUserOptions}
                 </select>
             </nav>
+        </header>
 
-            <h1>Create new user</h1>
             <UserForm saveUser={saveUser}       
             userToUpdate ={userToUpdate}/>
             <UserList    
