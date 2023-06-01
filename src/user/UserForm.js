@@ -29,7 +29,7 @@ const UserForm = ({saveUser, userToUpdate}) => {
     return ( 
         <>
         <section className="userForm__wrapper row">
-            <h1>Create new user</h1>
+            <h3>{newUser.id ? "Update username" : "Create a new user"}</h3>
             <form onSubmit={handleFormSubmit}>
                 <input 
                     type="text"
