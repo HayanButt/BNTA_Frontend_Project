@@ -68,8 +68,6 @@ const AnimalContainer = ({currentUser}) => {
         console.log(JSON.stringify(task));
         postTask(task);
     }
-
-
     const deleteTask = (id) => {
         fetch(`${SERVER_URL}/tasks/${id}`, {
             method: "DELETE",
@@ -85,12 +83,15 @@ const AnimalContainer = ({currentUser}) => {
         setCompletedTaskList([...completedTaskList, task])
     }
 
+
     const handleFormClickPet = () => {setShowPet((prev) => !prev)}
     const handleFormClickTask = () => {setShowTask((prev) => !prev)}
+
 
     return ( 
         <>
             <AnimalList userAnimals={userAnimals} deleteAnimal={deleteAnimal}/>
+
             <hr/>
             <h3>Add new pet</h3>
             <button onClick={handleFormClickPet}>{showPet === true? "Hide form" : "Show form"}</button>
@@ -103,6 +104,10 @@ const AnimalContainer = ({currentUser}) => {
             {showTask ? <TaskForm saveTask={saveTask} userAnimals={userAnimals}/> : null}
             
             
+            <TaskList currentUserTaskList={currentUserTaskList} setCurrentUserTaskList={setCurrentUserTaskList} deleteTask={deleteTask} completedTasks={completedTasks} completedTaskList={completedTaskList}/>
+            <AnimalForm saveAnimal={saveAnimal} currentUser={currentUser}/>
+            <TaskForm saveTask={saveTask} userAnimals={userAnimals}/>
+
             
         </>
      );

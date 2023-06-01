@@ -3,7 +3,6 @@
     width: 100%;
     max-width: 800px;
     margin:  0 auto;
-    padding: 0 12px;
 }
 
 
@@ -27,13 +26,13 @@ header {
 /* USER FORM */
 
 .userForm__wrapper {
-    height: 150px;    
-    display: flex;    
-    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    height:150px;
+    justify-content: flex-end;
 }
 
 form{
-    padding-top: 72px; 
     width: 100%;
     max-width: 200px;
 }
@@ -41,4 +40,5 @@ form{
 button{
     margin-left: 8px;
 }
+
 
