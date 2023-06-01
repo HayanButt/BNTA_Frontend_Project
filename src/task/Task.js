@@ -1,25 +1,35 @@
-import React, { useState } from 'react';
-
-const Task = ({task, deleteTask}) => {
-    const [completed, setCompleted] = useState(false);
-
-    const handleCompleted = () => {
-        setCompleted(!completed);
-      };
-
-    
-    return ( 
-        <>
-            <h3>{task.content}</h3>
-            <p>{task.dueDate}</p>
-            <p>{task.priority}</p>
-            <label>
-              Completed:
-              <input type="checkbox" checked={completed} onChange={handleCompleted} />
-            </label>
-            <button onClick={() => deleteTask(task.id)}>Delete Task</button>
-        </>
-     );
-}
+import React from 'react';
+const Task = ({ task, handleCompleted, completed, deleteTask }) => {
+  if (completed) {
+    return (
+      <>
+        <h3>{task.content}</h3>
+        <p>{task.dueDate}</p>
+        <p>{task.priority}</p>
+        <p> {task.completed}</p>
+        <button onClick={() => deleteTask(task.id)}>Delete Task</button>
+      </>
+    );
+  }else{
+  return ( 
+    <>
+      <h3>{task.content}</h3>
+      <p>{task.dueDate}</p>
+      <p>{task.priority}</p>
+      {task.completed === true ? null :
+        <label>
+          Completed:
+          <input 
+            type="checkbox" 
+            onChange={() => {
+              handleCompleted(task);
+            }} 
+          />
+        </label> 
+      }
+      <button onClick={() => deleteTask(task.id)}>Delete Task</button>
+    </>
+  );
+}}
  
 export default Task;
