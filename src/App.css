@@ -70,8 +70,9 @@ form{
 
 }
 
-.animal__list--title {
-  text-align: center
+.animal__list--title, .animal__form--title {
+  text-align: center;
+  margin-bottom: 16px;
 }
 
 .animal__list--wrapper {
@@ -80,4 +81,8 @@ form{
 
 .animal__item {
   text-align: center;
+}
+
+.animal__form--title {
+
 }

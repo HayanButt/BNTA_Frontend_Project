@@ -98,7 +98,7 @@ const AnimalContainer = ({currentUser}) => {
         </div>
 
             <hr/>
-            <h3>Add new pet</h3>
+            <h3 className="animal__form--title">Add new pet</h3>
             <button onClick={handleFormClickPet}>{showPet === true? "Hide form" : "Show form"}</button>
             {showPet ? <AnimalForm saveAnimal={saveAnimal} currentUser={currentUser}/> : null}
             <hr/>
