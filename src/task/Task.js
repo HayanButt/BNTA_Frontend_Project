@@ -4,8 +4,9 @@ const Task = ({ task, handleCompleted, completed, deleteTask }) => {
     return (
       <>
         <h3>{task.content}</h3>
-        <p>{task.dueDate}</p>
-        <p>{task.priority}</p>
+        <p>Pet: {task.animal.name}</p>
+        <p>Due date: {task.dueDate}</p>
+        <p>Priority: {task.priority}</p>
         <p> {task.completed}</p>
         <button onClick={() => deleteTask(task.id)}>Delete Task</button>
       </>
@@ -14,8 +15,9 @@ const Task = ({ task, handleCompleted, completed, deleteTask }) => {
   return ( 
     <>
       <h3>{task.content}</h3>
-      <p>{task.dueDate}</p>
-      <p>{task.priority}</p>
+      <p>Pet: {task.animal.name}</p>
+      <p>Due date: {task.dueDate}</p>
+      <p>Priority: {task.priority}</p>
       {task.completed === true ? null :
         <label>
           Completed:
