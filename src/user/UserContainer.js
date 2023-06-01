@@ -100,6 +100,7 @@ const UserContainer = () => {
             </nav>
         </header>
 
+            <h2>{currentUser.id ? ("Welcome " , {currentUser.name}) : "Select or create user"}</h2>
             <UserForm saveUser={saveUser}       
             userToUpdate ={userToUpdate}/>
             <UserList    
