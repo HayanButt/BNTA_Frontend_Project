@@ -3,7 +3,6 @@ import {useEffect, useState} from "react"
 import UserForm from "./UserForm";
 import UserList from './UserList';
 import AnimalContainer from '../animal/AnimalContainer';
-import './User.css'
 
 const SERVER_URL = "http://localhost:8080";
 
@@ -108,14 +107,16 @@ const UserContainer = () => {
         </header>
         
 
-        <div className="row">
-            {currentUser.id ?<h2>Welcome {currentUser.name}</h2>: <h2>Select or create user</h2>}
-            <button onClick={() => deleteUser(currentUser.id)}>
-                    Delete user
-            </button>
-            <button onClick={handleEditClick}>
-                    Edit user
-            </button>
+        <div className="row user__top--wrapper">
+            <div className="user__welcome--wrapper">
+                {currentUser.id ?<h2 className="user__welcome--title">Welcome {currentUser.name}</h2>: <h2 className="user__welcome--title">Select or create user</h2>}
+                <button onClick={() => deleteUser(currentUser.id)}>
+                        Delete user
+                </button>
+                <button onClick={handleEditClick}>
+                        Edit user
+                </button>
+            </div>
                 <UserForm saveUser={saveUser}       
                 userToUpdate ={userToUpdate}/>
         </div>

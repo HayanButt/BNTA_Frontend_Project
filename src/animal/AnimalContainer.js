@@ -90,7 +90,12 @@ const AnimalContainer = ({currentUser}) => {
 
     return ( 
         <>
-            <AnimalList userAnimals={userAnimals} deleteAnimal={deleteAnimal}/>
+        <div className="row animal__list--wrapper">
+            <h2 className="animal__list--title">Pet List</h2>
+            <div className="animal__container">
+                <AnimalList userAnimals={userAnimals} deleteAnimal={deleteAnimal}/>
+            </div>
+        </div>
 
             <hr/>
             <h3>Add new pet</h3>

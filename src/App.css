@@ -7,3 +7,77 @@
 body {
   margin: 16px;
 }
+
+
+.row{
+  width: 100%;
+  max-width: 800px;
+  margin:  0 auto;
+}
+
+
+/* CONTAINER */
+
+.navbar__Wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+a {
+  padding-right: 16px;
+  text-decoration: none;
+  color: #000;
+}
+
+header {
+  height: 72px;
+}
+
+/* USER FORM */
+
+.userForm__wrapper {
+  display: flex;
+  justify-content: flex-end;
+}
+
+form{
+  width: 100%;
+  max-width: 200px;
+}
+
+.user__top--wrapper {
+  height: 200px;
+
+}
+
+.user__form--title, .user__welcome--title {
+  margin-bottom: 16px;
+}
+
+.user__welcome--wrapper {
+
+}
+
+.user__form--button {
+  margin-left: 8px;
+}
+
+/* ANIMAL CONTAINER */
+
+.animal__container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+
+}
+
+.animal__list--title {
+  text-align: center
+}
+
+.animal__list--wrapper {
+  margin-bottom: 40px;
+}
+
+.animal__item {
+  text-align: center;
+}
