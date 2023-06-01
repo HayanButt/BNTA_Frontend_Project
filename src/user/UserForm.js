@@ -28,7 +28,7 @@ const UserForm = ({saveUser, userToUpdate}) => {
 
     return ( 
         <>
-        <section className="userForm__wrapper">
+        <section className="userForm__wrapper row">
             <h1>Create new user</h1>
             <form onSubmit={handleFormSubmit}>
                 <input 

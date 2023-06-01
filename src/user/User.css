@@ -1,3 +1,12 @@
+
+.row{
+    width: 100%;
+    max-width: 800px;
+    margin:  0 auto;
+    padding: 0 12px;
+}
+
+
 /* CONTAINER */
 
 .navbar__Wrapper {
@@ -18,8 +27,18 @@ header {
 /* USER FORM */
 
 .userForm__wrapper {
-    height: 150px;        
+    height: 150px;    
+    display: flex;    
+    justify-content: space-between;
 }
 
+form{
+    padding-top: 72px; 
+    width: 100%;
+    max-width: 200px;
+}
 
+button{
+    margin-left: 8px;
+}
 

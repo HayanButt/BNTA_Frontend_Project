@@ -7,9 +7,11 @@ const User = ({user, deleteUser, selectUserForEditing}) => {
 
     return ( 
         <>
-            <h3>{user.name}</h3>
-            <button onClick={() => deleteUser(user.id)}>Delete</button>
-            <button onClick={handleEditClick}>Edit</button>
+            <div>
+                    <h3>{user.name}</h3>
+                    <button onClick={() => deleteUser(user.id)}>Delete</button>
+                    <button onClick={handleEditClick}>Edit</button>
+            </div>    
         </>
      );
 }

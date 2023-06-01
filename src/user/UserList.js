@@ -16,8 +16,10 @@ const UserList = ({users, deleteUser, selectUserForEditing}) => {
 
     return ( 
         <>
-            <h2>userList</h2>
-            {userMapping}
+            <section className="row">
+                <h2>userList</h2>
+                {userMapping}
+            </section>
         </>
      );
 }
