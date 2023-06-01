@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const Task = ({task}) => {
+const Task = ({task, deleteTask}) => {
     const [completed, setCompleted] = useState(false);
 
     const handleCompleted = () => {
@@ -13,10 +13,11 @@ const Task = ({task}) => {
             <h3>{task.content}</h3>
             <p>{task.dueDate}</p>
             <p>{task.priority}</p>
-        <label>
-        Completed:
-        <input type="checkbox" checked={completed} onChange={handleCompleted} />
-      </label>
+            <label>
+              Completed:
+              <input type="checkbox" checked={completed} onChange={handleCompleted} />
+            </label>
+            <button onClick={() => deleteTask(task.id)}>Delete Task</button>
         </>
      );
 }
