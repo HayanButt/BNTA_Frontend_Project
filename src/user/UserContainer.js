@@ -89,7 +89,7 @@ const UserContainer = () => {
     return (  
         <>
         <header className="navbar__Wrapper">
-            <h1>Cat Checklist</h1>
+            <h1>Pet Checklist</h1>
             <nav>
                 <a href="">Animals</a>
                 <a href="">Task</a>
