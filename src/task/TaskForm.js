@@ -131,6 +131,7 @@ const TaskForm = ({saveTask, userAnimals}) => {
             </select>
 
             <select onChange={handleTaskTypeChange}>
+                <option disabled-value="select-task-type">Select a task type</option>
                 {tasksToDisplay}
             </select>       
                      {/* <Select options={currentAnimal?.animalType.availableTasks}></Select> */}
