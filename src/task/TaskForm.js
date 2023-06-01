@@ -95,7 +95,7 @@ const TaskForm = ({saveTask, userAnimals}) => {
             return task.link === currentAnimal?.animalType.animalTypeName
         })
         const mappedFilteredOptions = filteredOptions.map(task => {
-            return <option>{task.value}</option> 
+            return <option value={task.id}>{task.value}</option> 
         })
         
         setTasksToDisplay(mappedFilteredOptions)
