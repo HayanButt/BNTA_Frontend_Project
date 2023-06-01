@@ -1,4 +1,11 @@
-
+.footer-container{
+    background-color: #e5ffe4;
+    padding: 10px;
+}
+.footer-button-container{
+    padding: 20px;
+    padding-left: 0;
+}
 /* CSS */
 .footer-buttons {
   background-color: #e4fffe;
