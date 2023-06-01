@@ -10,6 +10,8 @@ const AnimalContainer = ({currentUser}) => {
     const [userAnimals, setUserAnimals] = useState([])
     const [completedTaskList, setCompletedTaskList] = useState([])
     const [currentUserTaskList, setCurrentUserTaskList] = useState([])
+    const [showPet, setShowPet] = useState(false)
+    const [showTask, setShowTask] = useState(false)
 
     useEffect(()=> {
         if (currentUser.id) {
@@ -83,15 +85,24 @@ const AnimalContainer = ({currentUser}) => {
         setCompletedTaskList([...completedTaskList, task])
     }
 
+    const handleFormClickPet = () => {setShowPet((prev) => !prev)}
+    const handleFormClickTask = () => {setShowTask((prev) => !prev)}
+
     return ( 
         <>
             <AnimalList userAnimals={userAnimals} deleteAnimal={deleteAnimal}/>
-
-          
+            <hr/>
+            <h3>Add new pet</h3>
+            <button onClick={handleFormClickPet}>{showPet === true? "Hide form" : "Show form"}</button>
+            {showPet ? <AnimalForm saveAnimal={saveAnimal} currentUser={currentUser}/> : null}
+            <hr/>
             <TaskList currentUserTaskList={currentUserTaskList} setCurrentUserTaskList={setCurrentUserTaskList} deleteTask={deleteTask} completedTasks={completedTasks} completedTaskList={completedTaskList}/>
-
-            <AnimalForm saveAnimal={saveAnimal} currentUser={currentUser}/>
-            <TaskForm saveTask={saveTask} userAnimals={userAnimals}/>
+            <hr/>
+            <h3>Add new task</h3>
+            <button onClick={handleFormClickTask}>{showTask === true? "Hide form" : "Show form"}</button>
+            {showTask ? <TaskForm saveTask={saveTask} userAnimals={userAnimals}/> : null}
+            
+            
             
         </>
      );
