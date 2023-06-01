@@ -4,8 +4,10 @@ import './Footer.css';
 const FooterContainer = () => {
     return ( 
         <div className="footer-container">
+            
             <div className="footer-button-container">
                 <button className="footer-buttons" role="button">About Us</button>
+                <button className="footer-buttons" role="button">Socials</button>
                 <button className="footer-buttons" role="button">FAQs</button>
                 <button className="footer-buttons" role="button">Contact Us</button>
             </div>
