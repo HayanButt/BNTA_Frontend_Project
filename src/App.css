@@ -83,3 +83,79 @@ form{
   text-align: center;
 }
 
+
+
+/* TASK FORM */
+
+.task__form--wrapper {
+  width:100%;
+  max-width: 400px;
+  margin: auto;
+  border: solid 1px all;
+  border-radius: 25px;
+  padding: 12px;
+  background-color: green;
+}
+
+.task__form {
+  display: flex;
+  margin-top: 8px;
+
+}
+
+/* BUTTON */
+.task__form--button {
+  background-color: red;
+  height: 100%;
+  max-height: 20px;
+  width: 100%;
+  max-width: 80px;
+}
+
+/* DETAILS */
+
+.task__input--details {
+  size: 100px;
+  padding: 8px;
+  border-radius: 999px;
+  border: 1px solid;
+  margin-bottom: 8px;
+  margin-right: 8px;
+}
+
+/* DATE */
+
+input[type="date"] {
+  background-color: #0080ff;
+  padding: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #ffffff;
+  font-size: 12px;
+  border: solid black;
+  border-radius: 5px;
+}
+
+/* SELECT */
+
+select {
+  padding: 8px;
+  border-radius: 999px;
+  border: 1px solid;
+  background-color: yellow;
+  margin-bottom: 8px;
+
+}
+
+.task__element--wrapper, .select__wrapper {
+  margin-right: 8px;
+}
+
+
+.animal__input--wrapper, .animal__type--wrapper  {
+
+
+}
+
+.anima__type--wrapper {
+
+}

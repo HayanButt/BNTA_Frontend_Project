@@ -99,14 +99,18 @@ const AnimalContainer = ({currentUser}) => {
 
             <hr/>
             <h3 className="animal__form--title">Add new pet</h3>
-            <button onClick={handleFormClickPet}>{showPet === true? "Hide form" : "Show form"}</button>
-            {showPet ? <AnimalForm saveAnimal={saveAnimal} currentUser={currentUser}/> : null}
+            <div className="task__form--wrapper">
+                <button onClick={handleFormClickPet}>{showPet === true? "Hide form" : "Show form"}</button>
+                {showPet ? <AnimalForm saveAnimal={saveAnimal} currentUser={currentUser}/> : null}
+            </div>
             <hr/>
             <TaskList currentUserTaskList={currentUserTaskList} setCurrentUserTaskList={setCurrentUserTaskList} deleteTask={deleteTask} completedTasks={completedTasks} completedTaskList={completedTaskList}/>
             <hr/>
             <h3>Add new task</h3>
-            <button onClick={handleFormClickTask}>{showTask === true? "Hide form" : "Show form"}</button>
-            {showTask ? <TaskForm saveTask={saveTask} userAnimals={userAnimals}/> : null}
+            <div className="task__form--wrapper">
+                <button onClick={handleFormClickTask}>{showTask === true? "Hide form" : "Show form"}</button>
+                {showTask ? <TaskForm saveTask={saveTask} userAnimals={userAnimals}/> : null}
+            </div>
             
         </>
      );
