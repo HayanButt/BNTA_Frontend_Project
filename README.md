@@ -78,9 +78,9 @@ Front End link: https://github.com/HayanButt/BNTA_Frontend_Project
   <pre><code>git clone git@github.com:HayanButt/BNTA_Frontend_Project.git</code></pre> </li>
 
 <li>Via terminal ensure you're in the correct folder for the Front End project and type 
-```npm i``` 
+<pre><code>npm i</code></pre>
 to install the node modules. After it is installed, type 
-```npm start```
+<pre><code>npm start</code></pre>
 to start the app up on localhost:3000</li>
 
 ## Diagram
