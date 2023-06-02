@@ -1,6 +1,5 @@
 import {useEffect, useState} from "react"
 import UserForm from "./UserForm";
-import UserList from './UserList';
 import AnimalContainer from '../animal/AnimalContainer';
 import './User.css'
 

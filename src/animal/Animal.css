@@ -1,0 +1,21 @@
+.animal-container{
+    background-color: 	#f9e4ff;
+    padding: 20px;
+    border-radius: 15px;
+    max-width: 250px;
+    text-align: center;
+
+}
+
+.pet-list{
+    /* display: grid;
+    grid-template-columns: 1fr 1fr 1fr; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 10px;
+}
+
+.form-container {
+    padding: 20px;
+}
