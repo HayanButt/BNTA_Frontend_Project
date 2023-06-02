@@ -28,7 +28,7 @@ There is a list of tasks and completed tasks. Once the checkbox is ticked, the t
 
 ![Components.png](https://github.com/HayanButt/BNTA_Frontend_Project/blob/main/Component.png?raw=true)
 
-<li> From the API, most of the data revolves around the animal class, which stems from the user class, and from this we fetched the information from the user in the user container. The user container feeds into the user related components and the animal container,  and the animal container supplys data to the rest of the components related to the animal, and the tasks.   </li>
+From the API, most of the data revolves around the animal class, which stems from the user class, and from this we fetched the information from the user in the user container. The user container feeds into the user related components and the animal container,  and the animal container supplys data to the rest of the components related to the animal, and the tasks.   
 
 # Tech Stack
 <ul>
@@ -41,8 +41,7 @@ There is a list of tasks and completed tasks. Once the checkbox is ticked, the t
 
 ## Set Up 
 
-<ol>
-<li>Ensure the following are installed on your machine:</li>
+Ensure the following are installed on your machine:
 <ul>
 <li>Visual Studio Code</li>
 <li>Intellij IDEA (JDK 17)</li>
