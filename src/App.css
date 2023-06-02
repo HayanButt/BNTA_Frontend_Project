@@ -1,9 +1,21 @@
 * {
   margin: 0;
   padding: 0;
-  
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
-  margin: 16px;
+  /* margin: 16px; */
+  background-color: #ffffe4;
+
 }
+h1 {  
+  font-family:'Kinkee', Arial, Helvetica, sans-serif;
+  font-size: 70px;
+}
+@font-face {
+  font-family: 'Kinkee';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Kinkee'), url('KINKEE__.woff') format('woff');
+  } 
