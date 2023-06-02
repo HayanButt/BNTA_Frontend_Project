@@ -15,7 +15,7 @@ Pawrioritise Like a Pro!
 
 ## Wireframe
 
-![UML][WireframeMVP](WireframeMVP.png)
+![WireframeMVP](https://github.com/HayanButt/BNTA_Frontend_Project/blob/main/WireframeMVP.png?raw=true)
 
 ![WireframeExtensions](Wireframe.png)
 
