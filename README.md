@@ -22,7 +22,7 @@ Pawrioritise Like a Pro!
 
 ## Components Diagram
 
-![Components] (Components.png)
+![Components] (Components.png)](https://github.com/HayanButt/BNTA_Frontend_Project/blob/main/Component.png?raw=true)
 
 # Tech Stack
 <ul>
