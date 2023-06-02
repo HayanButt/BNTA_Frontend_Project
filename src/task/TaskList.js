@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import Task from './Task'
+import './Task.css'
 const TaskList = ({ currentUserTaskList, setCurrentUserTaskList }) => {
   const [completedTaskList, setCompletedTaskList] = useState([]);
   
@@ -27,12 +28,20 @@ const TaskList = ({ currentUserTaskList, setCurrentUserTaskList }) => {
   ));
   
   return (
-    <>
-      <h2>Task List:</h2>
-      {mappedTask}
-      <h2>Completed Tasks:</h2>
-      {completedTaskMap}
-    </>    
+    <div className="task-list-container">
+      <div className="list-header">
+        <h2>Task List:</h2>
+      </div>
+      <div className="task-list">
+        {mappedTask}
+      </div>
+      <div className="list-header">
+        <h2>Completed Tasks:</h2>
+      </div>
+      <div className="completed-task-list">
+        {completedTaskMap}
+      </div>
+    </div>    
   );
 }
  
