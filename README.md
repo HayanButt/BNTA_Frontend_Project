@@ -2,16 +2,11 @@
 ## Petsthetics 
 Pawrioritise Like a Pro!
 
-
 ## Project description
 
-<ol>
+The backend API our team received was the Animal Task Manager project by the Cat_Cheklist group. The task manager allows the user to input their animals as well as the tasks associated with each pet.
 
-<li> The backend API our team received was the Animal Task Manager project by the Cat_Cheklist group. The task manager allows the user to input their animals as well as the tasks associated with each pet.  </li>
-
-<li> As a team, Petsthetics, decided to focus on making sure that the functionalities for the front-end included having a Pet, task and user List, in addition to being able to create and delete a user. </li>
-
-</ol>
+As a team, Petsthetics, decided to focus on making sure that the functionalities for the front-end included having a Pet, task and user List, in addition to being able to create and delete a user.
 
 ## Wireframe
 
@@ -19,9 +14,7 @@ Pawrioritise Like a Pro!
 
 ![WireframeExtensions](Wireframe.png)
 
-<ol>
-
-<li> For the wireframe we decided on a single page application. There is a navbar for the drop-down list of users, which enables switching between users. There is also a welcome message that changes with the selected user.  </li>
+For the wireframe we decided on a single page application. There is a navbar for the drop-down list of users, which enables switching between users. There is also a welcome message that changes with the selected user.  </li>
 
 ## Animal container
 
@@ -30,7 +23,6 @@ There is a list of current user animals and a form to create new animals. There 
 ## Task List
 
 There is a list of tasks and completed tasks. Once the checkbox is ticked, the task moves to the completed task list. There is also a form to create a new task. There are buttons to delete tasks.
-</ol>
 
 ## Components Diagram
 
