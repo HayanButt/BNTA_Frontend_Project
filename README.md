@@ -18,7 +18,7 @@ Pawrioritise Like a Pro!
 ## Wireframe
 
 ![WireframeMVP](WireframeMVP.png)
-![WireframeExtensions] (Wireframe.png)
+![Wireframe.png](https://github.com/HayanButt/BNTA_Frontend_Project/blob/main/Wireframe.png?raw=true)
 
 ## Components Diagram
 
