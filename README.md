@@ -54,22 +54,32 @@ Back End Api link: https://github.com/HayanButt/Cat_Checklist_BackEnd_GroupProje
 Front End link: https://github.com/HayanButt/BNTA_Frontend_Project
 
 
-<li> Clone the API repository from GitHub. Scroll to the top of this page and click on the green Code button. Ensure SSH is selected and copy the link provided. In your terminal, perform the following command:
+Clone the API repository from GitHub. 
+
+Scroll to the top of this page and click on the green Code button. 
+
+Ensure SSH is selected and copy the link provided. In your terminal, perform the following command:
   <pre><code>git clone git@github.com:HayanButt/Cat_Checklist_BackEnd_GroupProject.git</code></pre> </li>
 
-<li> Create a new PostgreSQL database named 'Cat_Checklist' anywhere in your terminal.</li>
+Create a new PostgreSQL database named 'Cat_Checklist' anywhere in your terminal.
   <pre> <code>createdb Cat_Checklist </code></pre>
 
-<li> Via Intellij IDEA, run the CatChecklistApiApplication and make sure the API is running on port 8080.</li>
+Via Intellij IDEA, run the CatChecklistApiApplication and make sure the API is running on port 8080.
 
-<li> Clone the Front End repository from GitHub. Scroll to the top of this page and click on the green Code button. Ensure SSH is selected and copy the link provided. In your terminal, perform the following command:
-  <pre><code>git clone git@github.com:HayanButt/BNTA_Frontend_Project.git</code></pre> </li>
+Clone the Front End repository from GitHub. 
 
-<li>Via terminal ensure you're in the correct folder for the Front End project and type 
+Scroll to the top of this page and click on the green Code button. 
+
+Ensure SSH is selected and copy the link provided. 
+
+In your terminal, perform the following command:
+  <pre><code>git clone git@github.com:HayanButt/BNTA_Frontend_Project.git</code></pre> 
+
+Via terminal ensure you're in the correct folder for the Front End project and type 
 <pre><code>npm i</code></pre>
 to install the node modules. After it is installed, type 
 <pre><code>npm start</code></pre>
-to start the app up on localhost:3000</li>
+to start the app up on localhost:3000
 
 ## Diagram
 
