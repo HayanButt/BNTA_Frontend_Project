@@ -1,7 +1,6 @@
 import {useEffect, useState} from "react"
 import UserForm from "./UserForm";
 import AnimalContainer from '../animal/AnimalContainer';
-import './User.css'
 
 const SERVER_URL = "http://localhost:8080";
 

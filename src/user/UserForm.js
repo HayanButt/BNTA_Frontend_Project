@@ -29,8 +29,8 @@ const UserForm = ({saveUser, userToUpdate}) => {
     return ( 
         <>
         <section className="userForm__wrapper row">
-            <h3>{newUser.id ? "Update username" : "Create a new user"}</h3>
             <form onSubmit={handleFormSubmit}>
+                <h3 className="user__form--title">{newUser.id ? "Update username" : "Create a new user"}</h3>
                 <input 
                     type="text"
                     name="name"
@@ -38,7 +38,7 @@ const UserForm = ({saveUser, userToUpdate}) => {
                     value={newUser.name}
                     onChange={handleChange}
                     />
-                <button type="submit">{newUser.id ? "Update" : "Create"}</button>
+                <button className="user__form--button" type="submit">{newUser.id ? "Update" : "Create"}</button>
             </form>
         </section>
         </>
