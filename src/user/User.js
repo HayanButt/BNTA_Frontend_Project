@@ -2,7 +2,6 @@ const User = ({user, deleteUser, selectUserForEditing}) => {
     const handleEditClick = () => {
         selectUserForEditing(user);
         const userForm = document.querySelector("form")
-        userForm.scrollIntoView({behavior: "smooth"})
     }
 
     return ( 

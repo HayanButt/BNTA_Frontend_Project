@@ -88,7 +88,6 @@ const UserContainer = () => {
       const handleEditClick = () => {
         selectUserForEditing(currentUser);
         const userForm = document.querySelector("form")
-        userForm.scrollIntoView({behavior: "smooth"})
     }
     
     return (  
