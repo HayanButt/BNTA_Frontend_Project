@@ -31,7 +31,7 @@ const UserForm = ({saveUser, userToUpdate}) => {
         <section className="userForm__wrapper row">
             <form onSubmit={handleFormSubmit}>
                 <h3 className="user__form--title">{newUser.id ? "Update username" : "Create a new user"}</h3>
-                <input 
+                <input className="task__input--details"
                     type="text"
                     name="name"
                     placeholder="Enter your name"

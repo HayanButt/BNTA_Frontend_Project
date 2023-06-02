@@ -29,10 +29,6 @@ h1 {
 
 /* CONTAINER */
 
-.navbar__Wrapper {
-  display: flex;
-  justify-content: space-between;
-}
 
 a {
   padding-right: 16px;
