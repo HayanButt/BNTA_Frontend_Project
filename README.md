@@ -34,9 +34,13 @@ There is a list of tasks and completed tasks. Once the checkbox is ticked, the t
 
 ## Components Diagram
 
+<<<<<<< HEAD
 ![um][Components] (Components.png)
 
 <li> From the API, most of the data revolves around the animal class, which stems from the user class, and from this we fetched the information from the user in the user container. The user container feeds into the user related components and the animal container,  and the animal container supplys data to the rest of the components related to the animal, and the tasks.   </li>
+=======
+![Components.png](https://github.com/HayanButt/BNTA_Frontend_Project/blob/main/Component.png?raw=true)
+>>>>>>> 588259ac957d3b5b0f73dc18bf361fd835e6a033
 
 # Tech Stack
 <ul>
