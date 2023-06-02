@@ -81,8 +81,6 @@ to install the node modules. After it is installed, type
 <pre><code>npm start</code></pre>
 to start the app up on localhost:3000
 
-## Diagram
-
 ## MVP and Extensions
 ### MVP
 * To ensure the pet checklist form enables CRUD functionality from the back-end API (Select/Create/Delete/Edit User, Add/Delete Pet, Add/Delete Tasks)
