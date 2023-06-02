@@ -1,16 +1,29 @@
-
 .row{
     width: 100%;
     max-width: 800px;
-    margin:  0 auto;
+    margin:  0;
 }
 
+.tag-line-bar{
+    display: flex;
+    justify-content: center;
+    background-color: #e4fffe;
+}
 
+.tag-line-bar > h3{
+    font-family:'Kinkee', Arial, Helvetica, sans-serif;
+    font-size: 2rem;
+}
 /* CONTAINER */
 
 .navbar__Wrapper {
     display: flex;
     justify-content: space-between;
+    background-color: #e5ffe4;
+    padding: 20px;
+    box-sizing:content-box;
+    position: sticky;
+    top: 0;
 }
 
 a {
@@ -28,8 +41,8 @@ header {
 .userForm__wrapper {
     display: flex;
     flex-direction: column;
-    height:150px;
     justify-content: flex-end;
+    padding: 20px;
 }
 
 form{
@@ -41,4 +54,13 @@ button{
     margin-left: 8px;
 }
 
+.row-current-user{
+    background-color: #e5e4ff;
+    padding: 20px;
+}
 
+.row-current-user > h2{
+    font-size: 50px;
+    font-family:'Kinkee', Arial, Helvetica, sans-serif;
+
+}

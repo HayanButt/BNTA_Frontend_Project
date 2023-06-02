@@ -1,4 +1,3 @@
-
 import {useEffect, useState} from "react"
 import UserForm from "./UserForm";
 import UserList from './UserList';
@@ -95,39 +94,40 @@ const UserContainer = () => {
     
     return (  
         <>
-        <header className="navbar__Wrapper">
-            <h1>Pet Checklist</h1>
-            <nav>
-                <a href="">Animals</a>
-                <a href="">Task</a>
-                <select name="currentUser" onChange={handleCurrentUserChange} >
-                    <option disabled-value="select-current-user">Select a user</option>
-                    {currentUserOptions}
-                </select>
-            </nav>
-        </header>
+            <header className="navbar__Wrapper">
+                <h1>Pet Checklist.</h1>
+                <nav>
+                    <a href="">Animals</a>
+                    <a href="">Task</a>
+                    <select name="currentUser" onChange={handleCurrentUserChange} >
+                        <option disabled-value="select-current-user">Select a user</option>
+                        {currentUserOptions}
+                    </select>
+                </nav>
+            </header>
+
+            <section className="tag-line-bar">
+                <h3>. Pawroiritise Like a Pro .</h3>
+            </section>
         
 
-        <div className="row">
-            {currentUser.id ?<h2>Welcome {currentUser.name}</h2>: <h2>Select or create user</h2>}
-            <button onClick={() => deleteUser(currentUser.id)}>
-                    Delete user
-            </button>
-            <button onClick={handleEditClick}>
-                    Edit user
-            </button>
-                <UserForm saveUser={saveUser}       
-                userToUpdate ={userToUpdate}/>
-        </div>
-            {/* <UserList    
-                users={users}
-                deleteUser={deleteUser} 
-                selectUserForEditing = {selectUserForEditing}
-            /> */}
-            
+            <div className="row-current-user">
+                {currentUser.id ?<h2>Welcome {currentUser.name}!</h2>: <h2>Select or create user</h2>}
+                <button onClick={() => deleteUser(currentUser.id)}>Delete user</button>
+                <button onClick={handleEditClick}>Edit user</button>
+            </div> 
+            <div>
+            <UserForm saveUser={saveUser} userToUpdate ={userToUpdate}/>
+                {/* <UserList    
+                    users={users}
+                    deleteUser={deleteUser} 
+                    selectUserForEditing = {selectUserForEditing}
+                /> */}
+                
             <AnimalContainer currentUser={currentUser}/>
+            </div>
         </>
     );
 }
  
-export default UserContainer;
+export default UserContainer
