@@ -90,19 +90,28 @@ const AnimalContainer = ({currentUser}) => {
 
     return ( 
         <>
-            <AnimalList userAnimals={userAnimals} deleteAnimal={deleteAnimal}/>
+        <div className="row animal__list--wrapper">
+            <h2 className="animal__list--title">Pet List</h2>
+            <div className="animal__container">
+                <AnimalList userAnimals={userAnimals} deleteAnimal={deleteAnimal}/>
+            </div>
+        </div>
 
             <hr/>
-            <h3>Add new pet</h3>
-            <button onClick={handleFormClickPet}>{showPet === true? "Hide form" : "Show form"}</button>
-            {showPet ? <AnimalForm saveAnimal={saveAnimal} currentUser={currentUser}/> : null}
+            <h3 className="animal__form--title">Add new pet</h3>
+            <div className="task__form--wrapper">
+                <button onClick={handleFormClickPet}>{showPet === true? "Hide form" : "Show form"}</button>
+                {showPet ? <AnimalForm saveAnimal={saveAnimal} currentUser={currentUser}/> : null}
+            </div>
             <hr/>
             <TaskList currentUserTaskList={currentUserTaskList} setCurrentUserTaskList={setCurrentUserTaskList} deleteTask={deleteTask} completedTasks={completedTasks} completedTaskList={completedTaskList}/>
             <hr/>
             <h3>Add new task</h3>
-            <button onClick={handleFormClickTask}>{showTask === true? "Hide form" : "Show form"}</button>
-            {showTask ? <TaskForm saveTask={saveTask} userAnimals={userAnimals}/> : null}
-            
+
+            <div className="task__form--wrapper">
+                <button onClick={handleFormClickTask}>{showTask === true? "Hide form" : "Show form"}</button>
+                {showTask ? <TaskForm saveTask={saveTask} userAnimals={userAnimals}/> : null}
+            </div>
 
             
         </>

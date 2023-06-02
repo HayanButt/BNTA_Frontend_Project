@@ -35,33 +35,36 @@ const AnimalForm = ({saveAnimal, currentUser}) => {
     
     return ( 
         <>
-            <form onSubmit={handleFormSubmit}>
-                
-                <input
-                type="text"
-                name="name"
-                placeholder="Enter your pet's name"
-                value={newAnimal.name} 
-                onChange={handleChange}/>
-                
-                <input
-                type="date"
-                name="birthday"
-                placeholder="Enter your pet's birthday"
-                value={newAnimal.birthday}
-                onChange={handleChange}/>
-                {/* <DatePicker
-                    value={startDate}
-                    onChange={date => setStartDate(date)}
-                /> */}
-
-                <select onChange={handleChange} name="animalTypeId">
-                    <option disabled-value="select-animal-type">Select an animal type</option>
-                    <option value={1}>Cat</option> 
-                    <option value={2}>Dog</option>
-                    <option value={3}>Fish</option>
-                </select>
-                <button type="submit">Create Animal</button>
+            <form className="task__form" onSubmit={handleFormSubmit}>
+                <div className="animal__input--wrapper">
+                    <input
+                    className="task__input--details"
+                    type="text"
+                    name="name"
+                    placeholder="Enter your pet's name"
+                    value={newAnimal.name} 
+                    onChange={handleChange}/>
+                    
+                    <input
+                    type="date"
+                    name="birthday"
+                    placeholder="Enter your pet's birthday"
+                    value={newAnimal.birthday}
+                    onChange={handleChange}/>
+                    {/* <DatePicker
+                        value={startDate}
+                        onChange={date => setStartDate(date)}
+                    /> */}
+                </div>
+                <div className="animal__type--wrapper">
+                    <select onChange={handleChange} name="animalTypeId">
+                        <option disabled-value="select-animal-type">Select an animal type</option>
+                        <option value={1}>Cat</option> 
+                        <option value={2}>Dog</option>
+                        <option value={3}>Fish</option>
+                    </select>
+                    <button type="submit">Create Animal</button>
+                </div>
             </form>
         </>
      );

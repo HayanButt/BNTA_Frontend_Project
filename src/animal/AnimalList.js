@@ -7,7 +7,6 @@ const AnimalList = ({userAnimals, deleteAnimal}) => {
 
     return ( 
         <>
-            <h2>Pet List</h2>
             {mappedAnimals}
         </>
      );

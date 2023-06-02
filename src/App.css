@@ -7,3 +7,155 @@
 body {
   margin: 16px;
 }
+
+
+.row{
+  width: 100%;
+  max-width: 800px;
+  margin:  0 auto;
+}
+
+
+/* CONTAINER */
+
+.navbar__Wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+a {
+  padding-right: 16px;
+  text-decoration: none;
+  color: #000;
+}
+
+header {
+  height: 72px;
+}
+
+/* USER FORM */
+
+.userForm__wrapper {
+  display: flex;
+  justify-content: flex-end;
+}
+
+form{
+  width: 100%;
+  max-width: 200px;
+}
+
+.user__top--wrapper {
+  height: 200px;
+
+}
+
+.user__form--title, .user__welcome--title {
+  margin-bottom: 16px;
+}
+
+.user__welcome--wrapper {
+
+}
+
+.user__form--button {
+  margin-left: 8px;
+}
+
+/* ANIMAL CONTAINER */
+
+.animal__container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+
+}
+
+.animal__list--title, .animal__form--title {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.animal__list--wrapper {
+  margin-bottom: 40px;
+}
+
+.animal__item {
+  text-align: center;
+}
+
+
+
+/* TASK FORM */
+
+.task__form--wrapper {
+  width:100%;
+  max-width: 400px;
+  margin: auto;
+  border: solid 1px all;
+  border-radius: 25px;
+  padding: 12px;
+  background-color: green;
+}
+
+.task__form {
+  display: flex;
+  margin-top: 8px;
+
+}
+
+/* BUTTON */
+.task__form--button {
+  background-color: red;
+  height: 100%;
+  max-height: 20px;
+  width: 100%;
+  max-width: 80px;
+}
+
+/* DETAILS */
+
+.task__input--details {
+  size: 100px;
+  padding: 8px;
+  border-radius: 999px;
+  border: 1px solid;
+  margin-bottom: 8px;
+  margin-right: 8px;
+}
+
+/* DATE */
+
+input[type="date"] {
+  background-color: #0080ff;
+  padding: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #ffffff;
+  font-size: 12px;
+  border: solid black;
+  border-radius: 5px;
+}
+
+/* SELECT */
+
+select {
+  padding: 8px;
+  border-radius: 999px;
+  border: 1px solid;
+  background-color: yellow;
+  margin-bottom: 8px;
+
+}
+
+.task__element--wrapper, .select__wrapper {
+  margin-right: 8px;
+}
+
+
+.animal__input--wrapper, .animal__type--wrapper  {
+
+
+}
+
+.anima__type--wrapper {
+
+}

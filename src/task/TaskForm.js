@@ -104,36 +104,40 @@ const TaskForm = ({saveTask, userAnimals}) => {
     useEffect(filterTaskOptions,[taskType])
 
     return ( 
-        <form onSubmit={handleFormSubmit}>
-            <input onChange={handleChange}
-                type="text"
-                name="content"
-                placeholder="Enter task details"
-                value={newTask.content}
-            />
-            <input onChange={handleChange}
-                name="dueDate"
-                type="date"
-                placeholder="Task Due Date"
+        <form className="task__form " onSubmit={handleFormSubmit}>
+            <div className="task__element--wrapper">
+                <input className="task__input--details" onChange={handleChange}
+                    type="text"
+                    name="content"
+                    placeholder="Enter task details"
+                    value={newTask.content}
+                    />
+                <input className="task__input--date" onChange={handleChange}
+                    name="dueDate"
+                    type="date"
+                    placeholder="Task Due Date"
+                />
+            </div>
+            <div className="select__wrapper">
+                <div className="task__input--priority">
+                    <select onChange={handleChange} name="priority">
+                        <option disabled-value="select-priority">Select a priority</option>
+                        <option value={0}>LOW</option> 
+                        <option value={1}>MEDIUM</option>
+                        <option value={2}>HIGH</option>
+                    </select>
+                </div>
 
-            />
+                <select onChange={handleAnimalChange} name="userAnimals">
+                    <option disabled-value="select-animal">Select an animal</option>
+                    {animalOptions}
+                </select>
 
-            <select onChange={handleChange} name="priority">
-                <option disabled-value="select-priority">Select a priority</option>
-                <option value={0}>LOW</option> 
-                <option value={1}>MEDIUM</option>
-                <option value={2}>HIGH</option>
-            </select>
-
-            <select onChange={handleAnimalChange} name="userAnimals">
-                <option disabled-value="select-animal">Select an animal</option>
-                {animalOptions}
-            </select>
-
-            <select onChange={handleTaskTypeChange}>
-                <option disabled-value="select-task-type">Select a task type</option>
-                {tasksToDisplay}
-            </select>       
+                <select onChange={handleTaskTypeChange}>
+                    <option disabled-value="select-task-type">Select a task type</option>
+                    {tasksToDisplay}
+                </select>       
+            </div>
                      {/* <Select options={currentAnimal?.animalType.availableTasks}></Select> */}
             <button type="submit">Submit</button>
         </form>
