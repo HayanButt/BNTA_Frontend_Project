@@ -3,6 +3,7 @@ import AnimalList from "./AnimalList";
 import TaskList from "../task/TaskList";
 import AnimalForm from "./AnimalForm";
 import TaskForm from "../task/TaskForm"
+import './Animal.css'
 
 const SERVER_URL = "http://localhost:8080"
 
@@ -92,19 +93,25 @@ const AnimalContainer = ({currentUser}) => {
         <>
             <AnimalList userAnimals={userAnimals} deleteAnimal={deleteAnimal}/>
 
-            <hr/>
-            <h3>Add new pet</h3>
-            <button onClick={handleFormClickPet}>{showPet === true? "Hide form" : "Show form"}</button>
-            {showPet ? <AnimalForm saveAnimal={saveAnimal} currentUser={currentUser}/> : null}
-            <hr/>
-            <TaskList currentUserTaskList={currentUserTaskList} setCurrentUserTaskList={setCurrentUserTaskList} deleteTask={deleteTask} completedTasks={completedTasks} completedTaskList={completedTaskList}/>
-            <hr/>
-            <h3>Add new task</h3>
-            <button onClick={handleFormClickTask}>{showTask === true? "Hide form" : "Show form"}</button>
-            {showTask ? <TaskForm saveTask={saveTask} userAnimals={userAnimals}/> : null}
-            
+            <div className="list-header">
+                <h3>Add new pet</h3>
+            </div>
 
+            <div className="form-container">
+                <button onClick={handleFormClickPet}>{showPet === true? "Hide form" : "Show form"}</button>
+                {showPet ? <AnimalForm saveAnimal={saveAnimal} currentUser={currentUser}/> : null}
+            </div>
             
+            <TaskList currentUserTaskList={currentUserTaskList} setCurrentUserTaskList={setCurrentUserTaskList} deleteTask={deleteTask} completedTasks={completedTasks} completedTaskList={completedTaskList}/>
+            
+            <div className="list-header">
+                <h3>Add new task</h3>
+            </div>
+
+            <div className="form-container">
+                <button onClick={handleFormClickTask}>{showTask === true? "Hide form" : "Show form"}</button>
+                {showTask ? <TaskForm saveTask={saveTask} userAnimals={userAnimals}/> : null}
+            </div>
         </>
      );
 }
