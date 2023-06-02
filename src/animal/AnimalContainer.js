@@ -96,7 +96,7 @@ const AnimalContainer = ({currentUser}) => {
         
 
             <div className="list-header">
-                <h3>Add new pet</h3>
+                <h3 id="tasks">Add new pet</h3>
             </div>
 
             <div className="form-container">

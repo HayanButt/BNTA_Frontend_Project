@@ -32,6 +32,7 @@ const UserForm = ({saveUser, userToUpdate}) => {
             <form onSubmit={handleFormSubmit}>
                 <h3 className="user__form--title">{newUser.id ? "Update username" : "Create a new user"}</h3>
                 <input className="task__input--details"
+                    id="animals"
                     type="text"
                     name="name"
                     placeholder="Enter your name"

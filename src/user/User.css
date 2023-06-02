@@ -16,6 +16,10 @@
 }
 /* CONTAINER */
 
+nav {
+    scroll-behavior: smooth;
+}
+
 .navbar__Wrapper {
     display: flex;
     justify-content: space-between;

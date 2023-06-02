@@ -139,7 +139,7 @@ const TaskForm = ({saveTask, userAnimals}) => {
                 </select>       
             </div>
                      {/* <Select options={currentAnimal?.animalType.availableTasks}></Select> */}
-            <button type="submit">Submit</button>
+            <button className="task__submit" type="submit">Submit</button>
         </form>
      );
 }

@@ -2,7 +2,7 @@ const Footer = () => {
     const year = new Date().getFullYear();
     
     return ( 
-        <footer>{`Copyright © Petsthetics ${year}`}</footer>
+        <footer className="footer__cop">{`Copyright © Petsthetics ${year}`}</footer>
      );
 }
  

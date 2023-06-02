@@ -96,8 +96,8 @@ const UserContainer = () => {
             <header className="navbar__Wrapper">
                 <h1>Pet Checklist.</h1>
                 <nav>
-                    <a href="">Animals</a>
-                    <a href="">Task</a>
+                    <a href="#animals">Animals</a>
+                    <a href="#tasks">Task</a>
                     <select name="currentUser" onChange={handleCurrentUserChange} >
                         <option disabled-value="select-current-user">Select a user</option>
                         {currentUserOptions}
