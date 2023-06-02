@@ -1,0 +1,53 @@
+.footer-container{
+  background-color: #e5ffe4;
+  padding: 10px;
+}
+.footer-button-container{
+  padding: 20px;
+  padding-left: 0;
+}
+.footer-button-top-container{
+display: flex;
+justify-content: center;
+padding: 10px;
+}
+.footer-button-bottom-container{
+display: flex;
+justify-content: center;
+padding: 10px;
+}
+/* CSS */
+button {
+background-color: #e4fffe;
+border-radius: 100px;
+box-shadow: rgba(44, 161, 187, 0.2) 0 -25px 18px -14px inset,rgba(44, 161, 187, 0.2) 0 1px 2px,rgba(44, 161, 187, 0.2) 0 2px 4px,rgba(44, 161, 187, 0.2) 0 4px 8px,rgba(44, 161, 187, 0.2) 0 8px 16px,rgba(44, 161, 187, 0.2) 0 16px 32px;
+color: violet;
+cursor: pointer;
+display: inline-block;
+font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
+padding: 7px 20px;
+text-align: center;
+text-decoration: none;
+transition: all 250ms;
+border: 0;
+font-size: 16px;
+touch-action: manipulation;
+}
+
+button:hover {
+box-shadow: rgba(44, 161, 187, 0.2) 0 -25px 18px -14px inset,rgba(44, 161, 187, 0.2) 0 1px 2px,rgba(44, 161, 187, 0.2) 0 2px 4px,rgba(44, 161, 187, 0.2) 0 4px 8px,rgba(44, 161, 187, 0.2) 0 8px 16px,rgba(44, 161, 187, 0.2) 0 16px 32px;
+transform: scale(1.05) rotate(-1deg);
+}
+
+
+
+button:active {
+background-color: #D33A2C;
+box-shadow: rgba(0, 0, 0, 0.12) 0 1px 3px 0 inset;
+color: #8245e4;
+}
+
+button:hover {
+background-color: #f9e4ff;
+border-color: #FAA4A4;
+}

@@ -3,12 +3,16 @@ import AnimalList from "./AnimalList";
 import TaskList from "../task/TaskList";
 import AnimalForm from "./AnimalForm";
 import TaskForm from "../task/TaskForm"
+import './Animal.css'
 
 const SERVER_URL = "http://localhost:8080"
 
 const AnimalContainer = ({currentUser}) => {
     const [userAnimals, setUserAnimals] = useState([])
+    const [completedTaskList, setCompletedTaskList] = useState([])
     const [currentUserTaskList, setCurrentUserTaskList] = useState([])
+    const [showPet, setShowPet] = useState(false)
+    const [showTask, setShowTask] = useState(false)
 
     useEffect(()=> {
         if (currentUser.id) {
@@ -65,7 +69,6 @@ const AnimalContainer = ({currentUser}) => {
         console.log(JSON.stringify(task));
         postTask(task);
     }
-
     const deleteTask = (id) => {
         fetch(`${SERVER_URL}/tasks/${id}`, {
             method: "DELETE",
@@ -77,15 +80,40 @@ const AnimalContainer = ({currentUser}) => {
 
 
 
+    const completedTasks = (task) => {
+        setCompletedTaskList([...completedTaskList, task])
+    }
+
+
+    const handleFormClickPet = () => {setShowPet((prev) => !prev)}
+    const handleFormClickTask = () => {setShowTask((prev) => !prev)}
 
 
     return ( 
         <>
+       
             <AnimalList userAnimals={userAnimals} deleteAnimal={deleteAnimal}/>
-            <TaskList currentUserTaskList={currentUserTaskList} deleteTask={deleteTask}/>
-            <AnimalForm saveAnimal={saveAnimal} currentUser={currentUser}/>
-            <TaskForm saveTask={saveTask} userAnimals={userAnimals}/>
+        
+
+            <div className="list-header">
+                <h3 id="tasks">Add new pet</h3>
+            </div>
+
+            <div className="form-container">
+                <button onClick={handleFormClickPet}>{showPet === true? "Hide form" : "Show form"}</button>
+                {showPet ? <AnimalForm saveAnimal={saveAnimal} currentUser={currentUser}/> : null}
+            </div>
             
+            <TaskList currentUserTaskList={currentUserTaskList} setCurrentUserTaskList={setCurrentUserTaskList} deleteTask={deleteTask} completedTasks={completedTasks} completedTaskList={completedTaskList}/>
+            
+            <div className="list-header">
+                <h3>Add new task</h3>
+            </div>
+
+            <div className="form-container">
+                <button onClick={handleFormClickTask}>{showTask === true? "Hide form" : "Show form"}</button>
+                {showTask ? <TaskForm saveTask={saveTask} userAnimals={userAnimals}/> : null}
+            </div>
         </>
      );
 }

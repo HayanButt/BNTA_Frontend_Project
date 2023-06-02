@@ -29,16 +29,17 @@ const UserForm = ({saveUser, userToUpdate}) => {
     return ( 
         <>
         <section className="userForm__wrapper row">
-            <h1>Create new user</h1>
             <form onSubmit={handleFormSubmit}>
-                <input 
+                <h3 className="user__form--title">{newUser.id ? "Update username" : "Create a new user"}</h3>
+                <input className="task__input--details"
+                    id="animals"
                     type="text"
                     name="name"
                     placeholder="Enter your name"
                     value={newUser.name}
                     onChange={handleChange}
                     />
-                <button type="submit">{newUser.id ? "Update" : "Create"}</button>
+                <button className="user__form--button" type="submit">{newUser.id ? "Update" : "Create"}</button>
             </form>
         </section>
         </>
